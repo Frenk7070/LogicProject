@@ -1,9 +1,14 @@
 This project solves the Set Packing problem by reducing it to SAT and 
 solving the resulting CNF formula using the Glucose 4.2 SAT solver.
+
 Input parameters:
+
 n = number of elements
+
 m = number of sets
+
 k = required number of chosen sets (at least k)
+
 Decision variables:
 For each set S_i, the solver introduces a Boolean variable x_i.
 x_i = True means the set is chosen.
@@ -23,31 +28,49 @@ This converts the whole Set Packing problem into a CNF formula.
 Example instance:
 
 5 3 2
+
 1 2
+
 3 4
+
 1 3
 
 This means:
+
 n = 5
+
 m = 3
+
 k = 2
+
 S1 = {1,2}
+
 S2 = {3,4}
+
 S3 = {1,3}
 
 Example output:
 
 Chosen sets: [1, 2]
+
 Packing size: 2
+
 S1: [1, 2]
+
 S2: [3, 4]
 
 unsatisfiable instance:
+
 3 3 2
+
 1 2
+
 2 3
+
 1 3
+
 Output:
+
 UNSAT
 
 I tried the solver with bigger inputs i.e with a considerate number of
